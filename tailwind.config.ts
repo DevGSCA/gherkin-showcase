@@ -18,6 +18,18 @@ export default {
 			}
 		},
 		extend: {
+			backgroundImage: {
+				'gradient-hero': 'var(--gradient-hero)',
+				'gradient-card': 'var(--gradient-card)',
+				'gradient-accent': 'var(--gradient-accent)'
+			},
+			boxShadow: {
+				'glow-primary': 'var(--glow-primary)',
+				'glow-accent': 'var(--glow-accent)'
+			},
+			fontFamily: {
+				mono: ['JetBrains Mono', 'Menlo', 'Monaco', 'Consolas', 'monospace']
+			},
 			colors: {
 				border: 'hsl(var(--border))',
 				input: 'hsl(var(--input))',
@@ -51,6 +63,15 @@ export default {
 				card: {
 					DEFAULT: 'hsl(var(--card))',
 					foreground: 'hsl(var(--card-foreground))'
+				},
+				gherkin: {
+					feature: 'hsl(var(--gherkin-feature))',
+					scenario: 'hsl(var(--gherkin-scenario))',
+					given: 'hsl(var(--gherkin-given))',
+					when: 'hsl(var(--gherkin-when))',
+					then: 'hsl(var(--gherkin-then))',
+					and: 'hsl(var(--gherkin-and))',
+					comment: 'hsl(var(--gherkin-comment))'
 				},
 				sidebar: {
 					DEFAULT: 'hsl(var(--sidebar-background))',
