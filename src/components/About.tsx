@@ -2,43 +2,60 @@ import { GherkinBlock, GherkinLine } from "./GherkinSyntax";
 
 export const About = () => {
   return (
-    <section className="py-20 px-6">
+    <section id="about" className="py-20 px-6">
       <div className="max-w-4xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 gherkin-feature">
-          Feature: Sobre o Product Owner
+        <h2 className="text-4xl font-bold text-primary mb-16 text-center">
+          Things I love
         </h2>
+        
+        <div className="grid md:grid-cols-3 gap-8 mb-16">
+          <div className="space-y-4">
+            <h3 className="text-2xl font-semibold text-foreground">Product Management</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Sou apaixonado por transformar ideias em produtos de valor, utilizando frameworks ágeis para entregar soluções que realmente impactam os usuários.
+            </p>
+          </div>
 
-        <div className="grid md:grid-cols-2 gap-8">
-          <GherkinBlock>
-            <GherkinLine keyword="Scenario" text="Background Profissional" />
-            <GherkinLine keyword="Given" text="que atuo como Product Owner na V8.TECH" indent={1} />
-            <GherkinLine keyword="And" text="trabalho com transformação digital" indent={1} />
-            <GherkinLine keyword="When" text="gerencio produtos e projetos" indent={1} />
-            <GherkinLine keyword="Then" text="foco em agregar valor ao cliente" indent={1} />
-            <GherkinLine keyword="And" text="aplico metodologias ágeis" indent={1} />
-            <GherkinLine keyword="And" text="promovo práticas de melhoria contínua" indent={1} />
-          </GherkinBlock>
+          <div className="space-y-4">
+            <h3 className="text-2xl font-semibold text-foreground">Metodologias Ágeis</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Extremamente dedicado às práticas ágeis, facilitando cerimônias Scrum e promovendo a melhoria contínua em times de alta performance.
+            </p>
+          </div>
 
-          <GherkinBlock>
-            <GherkinLine keyword="Scenario" text="Especialidades em Agilidade" />
-            <GherkinLine keyword="Given" text="que sou certificado Scrum Master" indent={1} />
-            <GherkinLine keyword="And" text="tenho expertise em Project Management" indent={1} />
-            <GherkinLine keyword="And" text="trabalho com transformação digital" indent={1} />
-            <GherkinLine keyword="When" text="lidero equipes ágeis" indent={1} />
-            <GherkinLine keyword="Then" text="facilito processos de melhoria" indent={1} />
-            <GherkinLine keyword="And" text="integro IA com inteligência humana" indent={1} />
-          </GherkinBlock>
+          <div className="space-y-4">
+            <h3 className="text-2xl font-semibold text-foreground">Transformação Digital</h3>
+            <p className="text-muted-foreground leading-relaxed">
+              Adoro liderar iniciativas de transformação digital, implementando processos que aumentam a eficiência e geram valor para o negócio.
+            </p>
+          </div>
         </div>
 
-        <GherkinBlock className="mt-8">
-          <GherkinLine keyword="Scenario" text="Filosofia de Trabalho" />
-          <GherkinLine keyword="Given" text="que vivo com o propósito de ajudar pessoas" indent={1} />
-          <GherkinLine keyword="And" text="auxilio organizações a praticar agilidade" indent={1} />
-          <GherkinLine keyword="When" text="trabalho com equipes" indent={1} />
-          <GherkinLine keyword="Then" text="melhoro o valor dos produtos para o cliente" indent={1} />
-          <GherkinLine keyword="And" text="sempre busco alcançar objetivos estratégicos" indent={1} />
-          <GherkinLine keyword="And" text="promovo transformação digital sustentável" indent={1} />
-        </GherkinBlock>
+        <div className="bg-card border rounded-2xl p-8 shadow-sm">
+          <h2 className="text-3xl font-bold text-foreground mb-6">About Me</h2>
+          
+          <div className="prose prose-lg max-w-none">
+            <p className="text-muted-foreground leading-relaxed mb-6">
+              Olá, sou <strong className="text-foreground">Luis Alberto Oliveira</strong>, Product Owner na <strong className="text-primary">V8.TECH</strong> em Salvador, Bahia. 
+              Com mais de 5 anos de experiência em metodologias ágeis, tenho me dedicado a transformar ideias em produtos digitais de sucesso.
+            </p>
+
+            <GherkinBlock className="my-8">
+              <GherkinLine keyword="Background" text="Perfil Professional" />
+              <GherkinLine keyword="Given" text="que trabalho como Product Owner na V8.TECH" indent={1} />
+              <GherkinLine keyword="And" text="tenho certificações em Scrum e metodologias ágeis" indent={1} />
+              <GherkinLine keyword="And" text="possuo experiência em transformação digital" indent={1} />
+              <GherkinLine keyword="When" text="lidero equipes de desenvolvimento" indent={1} />
+              <GherkinLine keyword="Then" text="entrego produtos que geram valor real" indent={1} />
+              <GherkinLine keyword="And" text="promovo cultura de melhoria contínua" indent={1} />
+            </GherkinBlock>
+
+            <p className="text-muted-foreground leading-relaxed">
+              Acredito que a combinação de visão estratégica, foco no usuário e excelência em execução são fundamentais 
+              para criar produtos digitais que realmente fazem a diferença no mercado.
+            </p>
+          </div>
+        </div>
       </div>
     </section>
   );

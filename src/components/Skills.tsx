@@ -1,64 +1,68 @@
 import { GherkinBlock, GherkinLine } from "./GherkinSyntax";
 import { Badge } from "@/components/ui/badge";
 
-const skillCategories = [
-  {
-    title: "Metodologias Ágeis",
-    scenario: "Facilitação de Processos Ágeis",
-    skills: ["Scrum", "Kanban", "SAFe", "Design Thinking", "Lean Startup", "OKRs"]
-  },
-  {
-    title: "Product Management", 
-    scenario: "Gestão de Produtos Digitais",
-    skills: ["Product Backlog", "User Stories", "Roadmap", "MVPs", "A/B Testing", "Analytics"]
-  },
-  {
-    title: "Project Management",
-    scenario: "Liderança de Projetos",
-    skills: ["PMP", "PMBOK", "Jira", "Confluence", "Trello", "MS Project"]
-  },
-  {
-    title: "Transformação Digital",
-    scenario: "Integração de Tecnologia e Negócio", 
-    skills: ["IA", "Machine Learning", "Process Mining", "Automação", "Cloud", "DevOps"]
-  }
-];
-
 export const Skills = () => {
-  return (
-    <section className="py-20 px-6 bg-secondary/10">
-      <div className="max-w-6xl mx-auto">
-        <h2 className="text-4xl font-bold text-center mb-12 gherkin-scenario">
-          Feature: Competências Profissionais
-        </h2>
+  const skillCategories = [
+    {
+      title: "Product Management",
+      skills: ["Product Strategy", "Roadmap Planning", "User Stories", "Backlog Management", "Stakeholder Management", "Data Analysis"]
+    },
+    {
+      title: "Metodologias Ágeis",
+      skills: ["Scrum", "Kanban", "SAFe", "OKRs", "Design Thinking", "Lean Startup"]
+    },
+    {
+      title: "Ferramentas",
+      skills: ["Jira", "Confluence", "Miro", "Figma", "Azure DevOps", "Power BI"]
+    },
+    {
+      title: "Soft Skills",
+      skills: ["Liderança", "Comunicação", "Facilitação", "Coaching", "Negociação", "Resolução de Conflitos"]
+    }
+  ];
 
-        <div className="grid md:grid-cols-2 gap-8">
-          {skillCategories.map((category, index) => (
-            <GherkinBlock key={index}>
-              <GherkinLine keyword="Scenario" text={category.scenario} />
-              <GherkinLine keyword="Given" text={`que trabalho com ${category.title.toLowerCase()}`} indent={1} />
-              <GherkinLine keyword="When" text="preciso implementar soluções" indent={1} />
-              <GherkinLine keyword="Then" text="utilizo as seguintes tecnologias:" indent={1} />
-              
-              <div className="mt-4 pl-8">
+  return (
+    <section id="skills" className="py-20 px-6 bg-secondary/30">
+      <div className="max-w-5xl mx-auto">
+        <h2 className="text-4xl font-bold text-primary mb-16 text-center">
+          Skills & Expertise
+        </h2>
+        
+        <div className="grid md:grid-cols-2 gap-12">
+          <div>
+            <GherkinBlock className="h-fit">
+              <GherkinLine keyword="Feature" text="Competências Técnicas" />
+              <div className="mt-4"></div>
+              <GherkinLine keyword="Scenario" text="Avaliação de habilidades" indent={1} />
+              <GherkinLine keyword="Given" text="que possuo expertise em Product Management" indent={2} />
+              <GherkinLine keyword="And" text="domino metodologias ágeis" indent={2} />
+              <GherkinLine keyword="And" text="tenho experiência com ferramentas modernas" indent={2} />
+              <GherkinLine keyword="When" text="aplico essas competências em projetos" indent={2} />
+              <GherkinLine keyword="Then" text="entrego resultados mensuráveis" indent={2} />
+              <GherkinLine keyword="And" text="promovo melhoria contínua" indent={2} />
+            </GherkinBlock>
+          </div>
+
+          <div className="space-y-8">
+            {skillCategories.map((category, index) => (
+              <div key={index} className="space-y-4">
+                <h3 className="text-xl font-semibold text-foreground border-b border-border pb-2">
+                  {category.title}
+                </h3>
                 <div className="flex flex-wrap gap-2">
                   {category.skills.map((skill, skillIndex) => (
                     <Badge 
                       key={skillIndex} 
-                      variant="secondary"
-                      className="bg-gradient-accent text-primary-foreground border-0"
+                      variant="secondary" 
+                      className="text-sm py-1 px-3 bg-primary/10 text-primary border-primary/20 hover:bg-primary/20 transition-colors"
                     >
                       {skill}
                     </Badge>
                   ))}
                 </div>
               </div>
-              
-              <div className="mt-2">
-                <GherkinLine keyword="And" text="garanto qualidade e performance" indent={1} />
-              </div>
-            </GherkinBlock>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </section>
