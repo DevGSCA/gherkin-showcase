@@ -30,15 +30,30 @@ export const Hero = () => {
         </GherkinBlock>
 
         <div className="flex justify-center gap-4">
-          <Button variant="default" size="lg" className="gap-2">
+          <Button 
+            variant="default" 
+            size="lg" 
+            className="gap-2"
+            onClick={() => window.open('https://github.com/luisalberto-oliveira', '_blank')}
+          >
             <Github className="w-5 h-5" />
             GitHub
           </Button>
-          <Button variant="outline" size="lg" className="gap-2">
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="gap-2"
+            onClick={() => window.open('https://www.linkedin.com/in/luis-alberto-oliveira-product-owner/', '_blank')}
+          >
             <Linkedin className="w-5 h-5" />
             LinkedIn
           </Button>
-          <Button variant="outline" size="lg" className="gap-2">
+          <Button 
+            variant="outline" 
+            size="lg" 
+            className="gap-2"
+            onClick={() => window.open('mailto:luis.alberto.oliveira@email.com', '_blank')}
+          >
             <Mail className="w-5 h-5" />
             Contato
           </Button>
