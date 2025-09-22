@@ -1,6 +1,6 @@
 import { GherkinBlock, GherkinLine } from "./GherkinSyntax";
 import { Button } from "@/components/ui/button";
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Linkedin, Mail } from "lucide-react";
 
 export const Hero = () => {
   return (
@@ -32,15 +32,6 @@ export const Hero = () => {
         <div className="flex justify-center gap-4">
           <Button 
             variant="default" 
-            size="lg" 
-            className="gap-2"
-            onClick={() => window.open('https://github.com/luisalberto-oliveira', '_blank')}
-          >
-            <Github className="w-5 h-5" />
-            GitHub
-          </Button>
-          <Button 
-            variant="outline" 
             size="lg" 
             className="gap-2"
             onClick={() => window.open('https://www.linkedin.com/in/luis-alberto-oliveira-product-owner/', '_blank')}
