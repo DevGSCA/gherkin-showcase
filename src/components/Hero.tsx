@@ -8,25 +8,25 @@ export const Hero = () => {
       <div className="max-w-4xl w-full">
         <div className="text-center mb-12">
           <h1 className="text-6xl font-bold bg-gradient-accent bg-clip-text text-transparent mb-4">
-            BDD Portfolio
+            Luis Alberto Oliveira
           </h1>
           <p className="text-xl text-muted-foreground">
-            Comportamento orientado por qualidade e inovação
+            Scrum Master | Product Owner | Project Manager
           </p>
         </div>
 
         <GherkinBlock className="mb-8">
-          <GherkinLine keyword="Feature" text="Portfolio Profissional" />
-          <GherkinLine keyword="#" text="Como um desenvolvedor experiente" indent={1} />
-          <GherkinLine keyword="#" text="Eu quero apresentar minhas habilidades e projetos" indent={1} />
-          <GherkinLine keyword="#" text="Para demonstrar minha expertise em desenvolvimento" indent={1} />
+          <GherkinLine keyword="Feature" text="Portfolio de Product Owner" />
+          <GherkinLine keyword="#" text="Como um Product Owner e Scrum Master experiente" indent={1} />
+          <GherkinLine keyword="#" text="Eu quero apresentar minha experiência em agilidade" indent={1} />
+          <GherkinLine keyword="#" text="Para demonstrar como melhoro produtos e processos" indent={1} />
           <div className="mt-4"></div>
-          <GherkinLine keyword="Scenario" text="Visitante conhece o desenvolvedor" indent={1} />
-          <GherkinLine keyword="Given" text="que sou um desenvolvedor full-stack" indent={2} />
-          <GherkinLine keyword="And" text="tenho experiência em tecnologias modernas" indent={2} />
-          <GherkinLine keyword="When" text="você navega pelo meu portfolio" indent={2} />
-          <GherkinLine keyword="Then" text="você encontra projetos de qualidade" indent={2} />
-          <GherkinLine keyword="And" text="pode avaliar minhas habilidades técnicas" indent={2} />
+          <GherkinLine keyword="Scenario" text="Cliente conhece o profissional" indent={1} />
+          <GherkinLine keyword="Given" text="que sou Product Owner na V8.TECH" indent={2} />
+          <GherkinLine keyword="And" text="tenho experiência em metodologias ágeis" indent={2} />
+          <GherkinLine keyword="When" text="você analisa meu perfil profissional" indent={2} />
+          <GherkinLine keyword="Then" text="encontra expertise em transformação digital" indent={2} />
+          <GherkinLine keyword="And" text="pode avaliar minha capacidade de gerar valor" indent={2} />
         </GherkinBlock>
 
         <div className="flex justify-center gap-4">

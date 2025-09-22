@@ -14,20 +14,21 @@ export const Contact = () => {
 
         <div className="grid md:grid-cols-2 gap-8">
           <GherkinBlock>
-            <GherkinLine keyword="Scenario" text="Interessado entra em contato" />
-            <GherkinLine keyword="Given" text="que você tem um projeto em mente" indent={1} />
-            <GherkinLine keyword="And" text="precisa de um desenvolvedor qualificado" indent={1} />
+            <GherkinLine keyword="Scenario" text="Cliente entra em contato" />
+            <GherkinLine keyword="Given" text="que você tem um desafio de produto" indent={1} />
+            <GherkinLine keyword="And" text="precisa de um Product Owner experiente" indent={1} />
             <GherkinLine keyword="When" text="você preenche o formulário" indent={1} />
             <GherkinLine keyword="Then" text="recebo sua mensagem" indent={1} />
             <GherkinLine keyword="And" text="respondo em até 24 horas" indent={1} />
-            <GherkinLine keyword="And" text="agendamos uma conversa" indent={1} />
+            <GherkinLine keyword="And" text="agendamos uma conversa estratégica" indent={1} />
             
             <div className="mt-6 pt-4 border-t border-border/50">
               <GherkinLine keyword="#" text="Disponível para:" indent={0} />
-              <GherkinLine keyword="#" text="• Desenvolvimento de aplicações web" indent={1} />
-              <GherkinLine keyword="#" text="• Consultoria técnica" indent={1} />
-              <GherkinLine keyword="#" text="• Code review e otimizações" indent={1} />
-              <GherkinLine keyword="#" text="• Projetos freelance" indent={1} />
+              <GherkinLine keyword="#" text="• Product Management e Strategy" indent={1} />
+              <GherkinLine keyword="#" text="• Facilitação Scrum e Agile Coaching" indent={1} />
+              <GherkinLine keyword="#" text="• Transformação Digital" indent={1} />
+              <GherkinLine keyword="#" text="• Consultoria em Metodologias Ágeis" indent={1} />
+              <GherkinLine keyword="#" text="• Salvador, Bahia - Brasil" indent={1} />
             </div>
           </GherkinBlock>
 
@@ -48,15 +49,15 @@ export const Contact = () => {
               </div>
               
               <div className="space-y-2">
-                <Label htmlFor="project">Tipo de Projeto</Label>
-                <Input id="project" placeholder="Web app, API, consultoria..." />
+                <Label htmlFor="project">Tipo de Necessidade</Label>
+                <Input id="project" placeholder="Product Strategy, Scrum, Transformação Digital..." />
               </div>
               
               <div className="space-y-2">
                 <Label htmlFor="message">Mensagem</Label>
                 <Textarea 
                   id="message" 
-                  placeholder="Descreva seu projeto ou necessidade..."
+                  placeholder="Descreva seu desafio de produto ou processo..."
                   className="min-h-[120px]"
                 />
               </div>

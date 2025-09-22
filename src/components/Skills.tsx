@@ -3,24 +3,24 @@ import { Badge } from "@/components/ui/badge";
 
 const skillCategories = [
   {
-    title: "Frontend Development",
-    scenario: "Desenvolvimento de Interfaces Modernas",
-    skills: ["React", "TypeScript", "Next.js", "Tailwind CSS", "Vue.js", "HTML5/CSS3"]
+    title: "Metodologias Ágeis",
+    scenario: "Facilitação de Processos Ágeis",
+    skills: ["Scrum", "Kanban", "SAFe", "Design Thinking", "Lean Startup", "OKRs"]
   },
   {
-    title: "Backend Development", 
-    scenario: "Construção de APIs Robustas",
-    skills: ["Node.js", "Express", "Python", "PostgreSQL", "MongoDB", "Redis"]
+    title: "Product Management", 
+    scenario: "Gestão de Produtos Digitais",
+    skills: ["Product Backlog", "User Stories", "Roadmap", "MVPs", "A/B Testing", "Analytics"]
   },
   {
-    title: "DevOps & Tools",
-    scenario: "Automação e Deployment",
-    skills: ["Docker", "AWS", "Git", "CI/CD", "Linux", "Nginx"]
+    title: "Project Management",
+    scenario: "Liderança de Projetos",
+    skills: ["PMP", "PMBOK", "Jira", "Confluence", "Trello", "MS Project"]
   },
   {
-    title: "Testing & Quality",
-    scenario: "Garantia de Qualidade de Software", 
-    skills: ["Jest", "Cypress", "Playwright", "Unit Testing", "Integration Testing", "BDD"]
+    title: "Transformação Digital",
+    scenario: "Integração de Tecnologia e Negócio", 
+    skills: ["IA", "Machine Learning", "Process Mining", "Automação", "Cloud", "DevOps"]
   }
 ];
 
@@ -29,7 +29,7 @@ export const Skills = () => {
     <section className="py-20 px-6 bg-secondary/10">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12 gherkin-scenario">
-          Feature: Stack Tecnológico
+          Feature: Competências Profissionais
         </h2>
 
         <div className="grid md:grid-cols-2 gap-8">

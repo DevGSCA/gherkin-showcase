@@ -4,36 +4,36 @@ import { ExternalLink, Github } from "lucide-react";
 
 const projects = [
   {
-    title: "E-commerce Platform",
-    description: "Plataforma completa de e-commerce com React e Node.js",
-    tech: ["React", "Node.js", "PostgreSQL", "Stripe"],
+    title: "Transformação Digital V8.TECH",
+    description: "Liderança na integração de IA com inteligência humana",
+    tech: ["Scrum", "Kanban", "IA", "Process Mining"],
     features: [
-      "Sistema de autenticação completo",
-      "Carrinho de compras com persistência", 
-      "Integração com gateway de pagamento",
-      "Dashboard administrativo"
+      "Implementação de metodologias ágeis",
+      "Roadmap de produtos digitais", 
+      "Integração de soluções de IA",
+      "Melhoria de processos organizacionais"
     ]
   },
   {
-    title: "Task Management App",
-    description: "Aplicativo de gerenciamento de tarefas com colaboração em tempo real",
-    tech: ["Vue.js", "Express", "Socket.io", "MongoDB"],
+    title: "Sistema de Gestão Ágil",
+    description: "Plataforma para acompanhamento de projetos e sprints",
+    tech: ["Jira", "Confluence", "OKRs", "Analytics"],
     features: [
-      "Colaboração em tempo real",
-      "Sistema de notificações",
-      "Drag and drop interface",
-      "Relatórios de produtividade"
+      "Dashboard de métricas ágeis",
+      "Gestão de backlog automatizada",
+      "Relatórios de produtividade",
+      "Integração com ferramentas DevOps"
     ]
   },
   {
-    title: "API RESTful",
-    description: "API robusta para sistema de gestão empresarial",
-    tech: ["Python", "FastAPI", "PostgreSQL", "Docker"],
+    title: "Produto de E-commerce B2B",
+    description: "Product Owner de plataforma para clientes corporativos",
+    tech: ["User Stories", "A/B Testing", "MVP", "Analytics"],
     features: [
-      "Documentação automática com Swagger",
-      "Autenticação JWT",
-      "Rate limiting e caching",
-      "Testes automatizados com 95% coverage"
+      "Definição de roadmap estratégico",
+      "Priorização baseada em valor",
+      "Testes de usabilidade contínuos",
+      "Métricas de engajamento e conversão"
     ]
   }
 ];
@@ -43,7 +43,7 @@ export const Projects = () => {
     <section className="py-20 px-6">
       <div className="max-w-6xl mx-auto">
         <h2 className="text-4xl font-bold text-center mb-12 gherkin-then">
-          Feature: Projetos Desenvolvidos
+          Feature: Projetos e Experiências
         </h2>
 
         <div className="space-y-8">
@@ -53,9 +53,9 @@ export const Projects = () => {
               <GherkinLine keyword="#" text={project.description} indent={1} />
               <div className="mt-4"></div>
               
-              <GherkinLine keyword="Scenario" text="Implementação das funcionalidades" indent={1} />
+              <GherkinLine keyword="Scenario" text="Implementação e gestão" indent={1} />
               <GherkinLine keyword="Given" text={`que utilizei ${project.tech.join(', ')}`} indent={2} />
-              <GherkinLine keyword="When" text="desenvolvi as funcionalidades" indent={2} />
+              <GherkinLine keyword="When" text="gerenciei as entregas" indent={2} />
               <GherkinLine keyword="Then" text="o projeto apresenta:" indent={2} />
               
               <div className="mt-2 space-y-1">
