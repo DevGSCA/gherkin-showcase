@@ -40,14 +40,14 @@ export const About = () => {
               Com mais de 5 anos de experiência em metodologias ágeis, tenho me dedicado a transformar ideias em produtos digitais de sucesso.
             </p>
 
-            <GherkinBlock className="my-8">
-              <GherkinLine keyword="Background" text="Perfil Professional" />
-              <GherkinLine keyword="Given" text="que trabalho como Product Owner na V8.TECH" indent={1} />
-              <GherkinLine keyword="And" text="tenho certificações em Scrum e metodologias ágeis" indent={1} />
-              <GherkinLine keyword="And" text="possuo experiência em transformação digital" indent={1} />
-              <GherkinLine keyword="When" text="lidero equipes de desenvolvimento" indent={1} />
-              <GherkinLine keyword="Then" text="entrego produtos que geram valor real" indent={1} />
-              <GherkinLine keyword="And" text="promovo cultura de melhoria contínua" indent={1} />
+            <GherkinBlock className="my-8" title="BDD Profile" animated={true}>
+              <GherkinLine keyword="Background" text="Perfil Professional" animated={true} delay={200} />
+              <GherkinLine keyword="Given" text="que trabalho como Product Owner na V8.TECH" indent={1} animated={true} delay={400} />
+              <GherkinLine keyword="And" text="tenho certificações em Scrum e metodologias ágeis" indent={1} animated={true} delay={600} />
+              <GherkinLine keyword="And" text="possuo experiência em transformação digital" indent={1} animated={true} delay={800} />
+              <GherkinLine keyword="When" text="lidero equipes de desenvolvimento" indent={1} animated={true} delay={1000} />
+              <GherkinLine keyword="Then" text="entrego produtos que geram valor real" indent={1} animated={true} delay={1200} />
+              <GherkinLine keyword="And" text="promovo cultura de melhoria contínua" indent={1} animated={true} delay={1400} />
             </GherkinBlock>
 
             <p className="text-muted-foreground leading-relaxed">

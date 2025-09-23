@@ -30,16 +30,16 @@ export const Skills = () => {
         
         <div className="grid md:grid-cols-2 gap-12">
           <div>
-            <GherkinBlock className="h-fit">
-              <GherkinLine keyword="Feature" text="Competências Técnicas" />
+            <GherkinBlock className="h-fit" title="Skills Assessment" animated={true}>
+              <GherkinLine keyword="Feature" text="Competências Técnicas" animated={true} delay={200} />
               <div className="mt-4"></div>
-              <GherkinLine keyword="Scenario" text="Avaliação de habilidades" indent={1} />
-              <GherkinLine keyword="Given" text="que possuo expertise em Product Management" indent={2} />
-              <GherkinLine keyword="And" text="domino metodologias ágeis" indent={2} />
-              <GherkinLine keyword="And" text="tenho experiência com ferramentas modernas" indent={2} />
-              <GherkinLine keyword="When" text="aplico essas competências em projetos" indent={2} />
-              <GherkinLine keyword="Then" text="entrego resultados mensuráveis" indent={2} />
-              <GherkinLine keyword="And" text="promovo melhoria contínua" indent={2} />
+              <GherkinLine keyword="Scenario" text="Avaliação de habilidades" indent={1} animated={true} delay={400} />
+              <GherkinLine keyword="Given" text="que possuo expertise em Product Management" indent={2} animated={true} delay={600} />
+              <GherkinLine keyword="And" text="domino metodologias ágeis" indent={2} animated={true} delay={800} />
+              <GherkinLine keyword="And" text="tenho experiência com ferramentas modernas" indent={2} animated={true} delay={1000} />
+              <GherkinLine keyword="When" text="aplico essas competências em projetos" indent={2} animated={true} delay={1200} />
+              <GherkinLine keyword="Then" text="entrego resultados mensuráveis" indent={2} animated={true} delay={1400} />
+              <GherkinLine keyword="And" text="promovo melhoria contínua" indent={2} animated={true} delay={1600} />
             </GherkinBlock>
           </div>
 

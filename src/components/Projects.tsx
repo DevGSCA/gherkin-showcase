@@ -34,22 +34,22 @@ export const Projects = () => {
         
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           <div>
-            <GherkinBlock>
-              <GherkinLine keyword="Feature" text="Projetos de Impacto" />
+            <GherkinBlock title="Project Success Metrics" animated={true}>
+              <GherkinLine keyword="Feature" text="Projetos de Impacto" animated={true} delay={200} />
               <div className="mt-4"></div>
-              <GherkinLine keyword="Background" text="Histórico de entregas" />
-              <GherkinLine keyword="Given" text="que liderei projetos de transformação digital" indent={1} />
-              <GherkinLine keyword="And" text="implementei metodologias ágeis eficazes" indent={1} />
-              <GherkinLine keyword="When" text="aplico estratégias de Product Management" indent={1} />
-              <GherkinLine keyword="Then" text="gero resultados mensuráveis e sustentáveis" indent={1} />
-              <GherkinLine keyword="And" text="promovo crescimento organizacional" indent={1} />
+              <GherkinLine keyword="Background" text="Histórico de entregas" animated={true} delay={400} />
+              <GherkinLine keyword="Given" text="que liderei projetos de transformação digital" indent={1} animated={true} delay={600} />
+              <GherkinLine keyword="And" text="implementei metodologias ágeis eficazes" indent={1} animated={true} delay={800} />
+              <GherkinLine keyword="When" text="aplico estratégias de Product Management" indent={1} animated={true} delay={1000} />
+              <GherkinLine keyword="Then" text="gero resultados mensuráveis e sustentáveis" indent={1} animated={true} delay={1200} />
+              <GherkinLine keyword="And" text="promovo crescimento organizacional" indent={1} animated={true} delay={1400} />
               
               <div className="mt-6 pt-4 border-t border-border/50">
-                <GherkinLine keyword="#" text="Métricas de Sucesso:" />
-                <GherkinLine keyword="#" text="• +300% ROI em projetos estratégicos" indent={1} />
-                <GherkinLine keyword="#" text="• 60% melhoria na eficiência de entregas" indent={1} />
-                <GherkinLine keyword="#" text="• 5+ squads transformados com Scrum" indent={1} />
-                <GherkinLine keyword="#" text="• 40% redução no time-to-market" indent={1} />
+                <GherkinLine keyword="#" text="Métricas de Sucesso:" animated={true} delay={1600} />
+                <GherkinLine keyword="#" text="• +300% ROI em projetos estratégicos" indent={1} animated={true} delay={1800} />
+                <GherkinLine keyword="#" text="• 60% melhoria na eficiência de entregas" indent={1} animated={true} delay={2000} />
+                <GherkinLine keyword="#" text="• 5+ squads transformados com Scrum" indent={1} animated={true} delay={2200} />
+                <GherkinLine keyword="#" text="• 40% redução no time-to-market" indent={1} animated={true} delay={2400} />
               </div>
             </GherkinBlock>
           </div>
