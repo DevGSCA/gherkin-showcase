@@ -3,8 +3,83 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from "@/components/ui/form";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { contactSchema, type ContactFormData } from "@/schemas/contactSchema";
+import { sanitizeInput, contactFormRateLimiter } from "@/lib/security";
+import { useToast } from "@/hooks/use-toast";
+import { useState } from "react";
 
 export const Contact = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const form = useForm<ContactFormData>({
+    resolver: zodResolver(contactSchema),
+    defaultValues: {
+      name: '',
+      email: '',
+      project: '',
+      message: '',
+      website: '' // Honeypot field
+    }
+  });
+
+  const onSubmit = async (data: ContactFormData) => {
+    // Check honeypot field
+    if (data.website) {
+      toast({
+        title: "Erro de segurança",
+        description: "Submission bloqueado por medidas de segurança.",
+        variant: "destructive"
+      });
+      return;
+    }
+
+    // Check rate limiting
+    if (!contactFormRateLimiter.canSubmit()) {
+      const waitTime = Math.ceil(contactFormRateLimiter.getTimeUntilNextSubmission() / 1000);
+      toast({
+        title: "Muitas tentativas",
+        description: `Aguarde ${waitTime} segundos antes de enviar novamente.`,
+        variant: "destructive"
+      });
+      return;
+    }
+
+    setIsSubmitting(true);
+
+    try {
+      // Sanitize all inputs
+      const sanitizedData = {
+        name: sanitizeInput(data.name),
+        email: sanitizeInput(data.email),
+        project: sanitizeInput(data.project),
+        message: sanitizeInput(data.message)
+      };
+
+      // Here you would typically send the data to your backend
+      // For now, we'll just simulate a successful submission
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      toast({
+        title: "Mensagem enviada!",
+        description: "Obrigado pelo contato. Respondo em até 24 horas.",
+      });
+
+      form.reset();
+    } catch (error) {
+      toast({
+        title: "Erro ao enviar",
+        description: "Tente novamente ou entre em contato diretamente.",
+        variant: "destructive"
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section className="py-20 px-6 bg-secondary/10">
       <div className="max-w-4xl mx-auto">
@@ -37,35 +112,110 @@ export const Contact = () => {
               <GherkinLine keyword="Scenario" text="Formulário de contato" />
             </GherkinBlock>
             
-            <form className="space-y-4">
-              <div className="space-y-2">
-                <Label htmlFor="name">Nome</Label>
-                <Input id="name" placeholder="Seu nome completo" />
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="email">Email</Label>
-                <Input id="email" type="email" placeholder="seu@email.com" />
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="project">Tipo de Necessidade</Label>
-                <Input id="project" placeholder="Product Strategy, Scrum, Transformação Digital..." />
-              </div>
-              
-              <div className="space-y-2">
-                <Label htmlFor="message">Mensagem</Label>
-                <Textarea 
-                  id="message" 
-                  placeholder="Descreva seu desafio de produto ou processo..."
-                  className="min-h-[120px]"
+            <Form {...form}>
+              <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4">
+                {/* Honeypot field - hidden from users */}
+                <FormField
+                  control={form.control}
+                  name="website"
+                  render={({ field }) => (
+                    <input
+                      {...field}
+                      type="text"
+                      style={{ display: 'none' }}
+                      tabIndex={-1}
+                      autoComplete="off"
+                    />
+                  )}
                 />
-              </div>
-              
-              <Button type="submit" className="w-full" size="lg">
-                Enviar Mensagem
-              </Button>
-            </form>
+
+                <FormField
+                  control={form.control}
+                  name="name"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Nome</FormLabel>
+                      <FormControl>
+                        <Input 
+                          placeholder="Seu nome completo" 
+                          {...field}
+                          maxLength={100}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                
+                <FormField
+                  control={form.control}
+                  name="email"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Email</FormLabel>
+                      <FormControl>
+                        <Input 
+                          type="email" 
+                          placeholder="seu@email.com" 
+                          {...field}
+                          maxLength={254}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                
+                <FormField
+                  control={form.control}
+                  name="project"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Tipo de Necessidade</FormLabel>
+                      <FormControl>
+                        <Input 
+                          placeholder="Product Strategy, Scrum, Transformação Digital..." 
+                          {...field}
+                          maxLength={200}
+                        />
+                      </FormControl>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                
+                <FormField
+                  control={form.control}
+                  name="message"
+                  render={({ field }) => (
+                    <FormItem>
+                      <FormLabel>Mensagem</FormLabel>
+                      <FormControl>
+                        <Textarea 
+                          placeholder="Descreva seu desafio de produto ou processo..."
+                          className="min-h-[120px]"
+                          {...field}
+                          maxLength={2000}
+                        />
+                      </FormControl>
+                      <FormDescription>
+                        {field.value?.length || 0}/2000 caracteres
+                      </FormDescription>
+                      <FormMessage />
+                    </FormItem>
+                  )}
+                />
+                
+                <Button 
+                  type="submit" 
+                  className="w-full" 
+                  size="lg"
+                  disabled={isSubmitting}
+                >
+                  {isSubmitting ? "Enviando..." : "Enviar Mensagem"}
+                </Button>
+              </form>
+            </Form>
           </div>
         </div>
       </div>
