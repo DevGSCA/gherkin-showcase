@@ -9,19 +9,22 @@ export const Projects = () => {
       title: "Plataforma de E-commerce B2B",
       description: "Liderou a transformação digital de uma plataforma B2B, implementando metodologias ágeis e aumentando a eficiência do time em 40%.",
       tech: ["Product Strategy", "Scrum", "Jira", "Data Analysis"],
-      impact: "40% melhoria na eficiência"
+      impact: "40% melhoria na eficiência",
+      link: "https://github.com/produto-manager/ecommerce-b2b-platform"
     },
     {
       title: "Sistema de CRM Customizado", 
       description: "Desenvolvimento de roadmap estratégico para sistema CRM, facilitando workshops de discovery e definindo MVPs que geraram ROI de 300%.",
       tech: ["Design Thinking", "OKRs", "Stakeholder Management"],
-      impact: "300% ROI"
+      impact: "300% ROI",
+      link: "https://github.com/produto-manager/custom-crm-system"
     },
     {
       title: "Transformação Ágil Corporativa",
       description: "Implementação de framework Scrum em 5 squads, conduzindo coaching ágil e estabelecendo cerimônias que melhoraram a entrega em 60%.",
       tech: ["Agile Coaching", "SAFe", "Team Leadership"],
-      impact: "60% melhoria na entrega"
+      impact: "60% melhoria na entrega",
+      link: "https://github.com/produto-manager/agile-transformation-framework"
     }
   ];
 
@@ -56,37 +59,45 @@ export const Projects = () => {
 
           <div className="space-y-6">
             {projects.map((project, index) => (
-              <Card key={index} className="group hover:shadow-lg transition-all duration-300 border-border/50 hover:border-primary/30">
-                <CardHeader className="pb-3">
-                  <div className="flex items-start justify-between">
-                    <CardTitle className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
-                      {project.title}
-                    </CardTitle>
-                    <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
-                  </div>
-                  <CardDescription className="text-muted-foreground leading-relaxed">
-                    {project.description}
-                  </CardDescription>
-                </CardHeader>
-                <CardContent className="pt-0">
-                  <div className="space-y-3">
-                    <div className="flex flex-wrap gap-2">
-                      {project.tech.map((tech, techIndex) => (
-                        <Badge 
-                          key={techIndex} 
-                          variant="outline" 
-                          className="text-xs border-primary/30 text-primary hover:bg-primary/10"
-                        >
-                          {tech}
-                        </Badge>
-                      ))}
+              <a 
+                key={index} 
+                href={project.link} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="block"
+              >
+                <Card className="group hover:shadow-lg transition-all duration-300 border-border/50 hover:border-primary/30 cursor-pointer">
+                  <CardHeader className="pb-3">
+                    <div className="flex items-start justify-between">
+                      <CardTitle className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                        {project.title}
+                      </CardTitle>
+                      <ExternalLink className="w-4 h-4 text-muted-foreground opacity-0 group-hover:opacity-100 transition-opacity" />
                     </div>
-                    <div className="text-sm font-medium text-primary">
-                      🎯 {project.impact}
+                    <CardDescription className="text-muted-foreground leading-relaxed">
+                      {project.description}
+                    </CardDescription>
+                  </CardHeader>
+                  <CardContent className="pt-0">
+                    <div className="space-y-3">
+                      <div className="flex flex-wrap gap-2">
+                        {project.tech.map((tech, techIndex) => (
+                          <Badge 
+                            key={techIndex} 
+                            variant="outline" 
+                            className="text-xs border-primary/30 text-primary hover:bg-primary/10"
+                          >
+                            {tech}
+                          </Badge>
+                        ))}
+                      </div>
+                      <div className="text-sm font-medium text-primary">
+                        🎯 {project.impact}
+                      </div>
                     </div>
-                  </div>
-                </CardContent>
-              </Card>
+                  </CardContent>
+                </Card>
+              </a>
             ))}
           </div>
         </div>
