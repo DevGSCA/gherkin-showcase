@@ -10,6 +10,7 @@ import { contactSchema, type ContactFormData } from "@/schemas/contactSchema";
 import { sanitizeInput, contactFormRateLimiter } from "@/lib/security";
 import { useToast } from "@/hooks/use-toast";
 import { useState } from "react";
+import { supabase } from "@/integrations/supabase/client";
 
 export const Contact = () => {
   const { toast } = useToast();
@@ -59,9 +60,14 @@ export const Contact = () => {
         message: sanitizeInput(data.message)
       };
 
-      // Here you would typically send the data to your backend
-      // For now, we'll just simulate a successful submission
-      await new Promise(resolve => setTimeout(resolve, 1000));
+      // Send data to Supabase
+      const { error } = await supabase
+        .from('contacts')
+        .insert([sanitizedData]);
+
+      if (error) {
+        throw error;
+      }
 
       toast({
         title: "Mensagem enviada!",
