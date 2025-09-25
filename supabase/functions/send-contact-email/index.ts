@@ -44,7 +44,7 @@ const handler = async (req: Request): Promise<Response> => {
   try {
     const { name, email, project, message }: ContactEmailRequest = await req.json();
 
-    console.log("Sending contact email for:", { name, email, project });
+    console.log("Enviando email de contato para:", { name, email, project });
 
     // Send confirmation email to the user
     const userEmailResponse = await resend.emails.send({
@@ -112,7 +112,7 @@ const handler = async (req: Request): Promise<Response> => {
     });
     */
 
-    console.log("Email sent successfully to user:", userEmailResponse);
+    console.log("Email enviado com sucesso para usuário:", userEmailResponse);
 
     return new Response(
       JSON.stringify({ 
@@ -129,7 +129,7 @@ const handler = async (req: Request): Promise<Response> => {
       }
     );
   } catch (error: any) {
-    console.error("Error in send-contact-email function:", error);
+    console.error("Erro na função send-contact-email:", error);
     return new Response(
       JSON.stringify({ 
         success: false, 

@@ -76,11 +76,11 @@ export const Contact = () => {
         });
 
         if (emailError) {
-          console.error('Email sending error:', emailError);
+          console.error('Erro ao enviar email:', emailError);
           // Don't throw here - we still want to show success if data was saved
         }
       } catch (emailError) {
-        console.error('Failed to send email:', emailError);
+        console.error('Falha ao enviar email:', emailError);
         // Don't throw here - we still want to show success if data was saved
       }
 
