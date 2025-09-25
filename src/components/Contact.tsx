@@ -69,6 +69,21 @@ export const Contact = () => {
         throw error;
       }
 
+      // Send email notification
+      try {
+        const { error: emailError } = await supabase.functions.invoke('send-contact-email', {
+          body: sanitizedData
+        });
+
+        if (emailError) {
+          console.error('Email sending error:', emailError);
+          // Don't throw here - we still want to show success if data was saved
+        }
+      } catch (emailError) {
+        console.error('Failed to send email:', emailError);
+        // Don't throw here - we still want to show success if data was saved
+      }
+
       toast({
         title: "Mensagem enviada!",
         description: "Obrigado pelo contato. Respondo em até 24 horas.",
